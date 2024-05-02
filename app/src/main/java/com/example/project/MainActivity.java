@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        användarTextView = findViewById(R.id.anvandar_text_view);  // Notera att ID:t är anvandar_text_view
+        användarTextView = findViewById(R.id.anvandar_text_view);
         Button btnOpenSecond = findViewById(R.id.openSecondActivityButton);
         btnOpenSecond.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        // Läs från SharedPreferences i onResume
         SharedPreferences sharedPreferences = getSharedPreferences("MinaInställningar", MODE_PRIVATE);
         String användarnamn = sharedPreferences.getString("Nyckel", "DefaultNamn");  // Ändra "Nyckel" till vad du faktiskt använder i SecondActivity när du sparar datan
         användarTextView.setText(användarnamn);

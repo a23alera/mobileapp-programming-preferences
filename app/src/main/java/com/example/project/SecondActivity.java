@@ -16,7 +16,7 @@ public class SecondActivity extends AppCompatActivity {
 
         final EditText editText = findViewById(R.id.editTextData);
         Button saveButton = findViewById(R.id.saveButton);
-        Button backButton = findViewById(R.id.backButton); // Hämta referens till tillbakaknappen
+        Button backButton = findViewById(R.id.backButton);
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,7 +27,6 @@ public class SecondActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("Nyckel", textToSave);
                 editor.apply();
-
                 Toast.makeText(SecondActivity.this, "Sparat i inställningar", Toast.LENGTH_SHORT).show();
             }
         });
@@ -35,7 +34,6 @@ public class SecondActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Avsluta aktiviteten och återgå till MainActivity
                 finish();
             }
         });
